@@ -6,7 +6,7 @@ CONSTRUCT
 {
     ?this dct:title [ a xsd:string ] ;
           schema:text [ a xsd:string ] ;
-	  schema:address [ a schema:PostalAddress ] ;
-    	  schema:image [ schema:ImageObject ] .
+          schema:address [ a schema:PostalAddress ] ;
+          schema:image [ a schema:ImageObject ] .
 }
 WHERE {}
