@@ -51,3 +51,5 @@ popd
 printf "\n### Create containers\n\n"
 
 ./create-containers.sh "$base" "$cert_pem_file" "$cert_password"
+
+find "${PWD}/houses" -name '*.ttl' -exec ./update-document.sh "$base" "$cert_pem_file" "$cert_password" "$PWD" {} \;

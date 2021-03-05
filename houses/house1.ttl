@@ -1,0 +1,21 @@
+@prefix dom:    <ns/domain#> .
+@prefix schema: <https://schema.org/>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix sioc:   <http://rdfs.org/sioc/ns#> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+@prefix dct:    <http://purl.org/dc/terms/> .
+
+<houses/house1/> a dom:HouseItem ;
+    sioc:has_container <houses/> ;
+    dct:title "101 Cottage Road, South Portland, ME" ;
+    foaf:primaryTopic <houses/house1/#this> .
+
+<houses/house1/#this> a dom:House ;
+    foaf:isPrimaryTopicOf <houses/house1/> ;
+    dct:title "101 Cottage Road, South Portland, ME" ;
+    schema:text "A house in South Portland, Maine.";
+    schema:address [ a schema:PostalAddress ;
+		     schema:streetAddress "101 Cottage Road" ;
+    		     schema:addressLocality "South Portland" ;
+		     schema:addressRegion "Maine" ;
+		     schema:postalCode "04106" ] .
