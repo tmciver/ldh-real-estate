@@ -25,4 +25,13 @@ pushd . && cd "$SCRIPT_ROOT"
 --parent "$base" \
 "$base"
 
+./create-container.sh \
+-b "$base" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--title "Addresses" \
+--slug "addresses" \
+--parent "$base" \
+"$base"
+
 popd

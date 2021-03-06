@@ -5,6 +5,17 @@
 @prefix foaf:   <http://xmlns.com/foaf/0.1/> .
 @prefix dct:    <http://purl.org/dc/terms/> .
 
+<addresses/address1/> a dom:AddressItem ;
+    sioc:has_container <addresses/> ;
+    foaf:primaryTopic <houses/house1/#this> .
+
+<addresses/address1/#this> a schema:PostalAddress, dom:PostalAddress ;
+    foaf:isPrimaryTopicOf <houses/address1/> ;
+    schema:streetAddress "101 Cottage Road" ;
+    schema:addressLocality "South Portland" ;
+    schema:addressRegion "Maine" ;
+    schema:postalCode "04106" .
+
 <houses/house1/> a dom:HouseItem ;
     sioc:has_container <houses/> ;
     dct:title "101 Cottage Road, South Portland, ME" ;
@@ -13,9 +24,5 @@
 <houses/house1/#this> a dom:House ;
     foaf:isPrimaryTopicOf <houses/house1/> ;
     dct:title "101 Cottage Road, South Portland, ME" ;
-    schema:text "A house in South Portland, Maine.";
-    schema:address [ a schema:PostalAddress ;
-		     schema:streetAddress "101 Cottage Road" ;
-    		     schema:addressLocality "South Portland" ;
-		     schema:addressRegion "Maine" ;
-		     schema:postalCode "04106" ] .
+    schema:text "A house in South Portland, Maine." ;
+    schema:address <addresses/address1/#this> .

@@ -26,4 +26,13 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --slug construct-house \
 --query-file "$pwd/queries/construct-house.rq"
 
+./create-construct.sh \
+-b "${base}admin/" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--uri "${base}ns/domain#ConstructAddress" \
+--label "Construct address" \
+--slug construct-address \
+--query-file "$pwd/queries/construct-address.rq"
+
 popd

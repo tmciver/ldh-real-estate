@@ -38,4 +38,27 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --sub-class-of "${base}ns/domain/default#Item" \
 --sub-class-of "${base}ns/domain#ItemOfHouseContainer"
 
+./create-class.sh \
+-b "${base}admin/" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--uri "${base}ns/domain#Address" \
+--label "Address" \
+--slug address \
+--constructor "${base}ns/domain#ConstructAddress" \
+--sub-class-of "${base}ns/domain#TopicOfAddressItem" \
+--sub-class-of "https://schema.org/Address" \
+--path "{isPrimaryTopicOf.slug}/" \
+--fragment "this"
+
+./create-class.sh \
+-b "${base}admin/" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--uri "${base}ns/domain#AddressItem" \
+--label "Address item" \
+--slug address-item \
+--sub-class-of "${base}ns/domain/default#Item" \
+--sub-class-of "${base}ns/domain#ItemOfAddressContainer"
+
 popd

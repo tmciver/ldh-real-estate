@@ -35,4 +35,24 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --on-property "http://rdfs.org/sioc/ns#has_container" \
 --has-value "${base}houses/"
 
+./create-restriction.sh \
+-b "${base}admin/" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--uri "${base}ns/domain#TopicOfAddressItem" \
+--label "Topic of address item" \
+--slug topic-of-address-item \
+--on-property "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" \
+--all-values-from "${base}ns/domain#AddressItem"
+
+./create-restriction.sh \
+-b "${base}admin/" \
+-f "$cert_pem_file" \
+-p "$cert_password" \
+--uri "${base}ns/domain#ItemOfAddressContainer" \
+--label "Item of address container" \
+--slug item-of-address-container \
+--on-property "http://rdfs.org/sioc/ns#has_container" \
+--has-value "${base}addresses/"
+
 popd

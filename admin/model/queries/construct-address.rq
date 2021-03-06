@@ -1,0 +1,12 @@
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX schema:  <https://schema.org/>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+CONSTRUCT
+{
+    ?this schema:streetAddress [ a xsd:string ] ;
+          schema:addressLocality [ a xsd:string ] ;
+	  schema:addressRegion [ a xsd:string ] ;
+	  shcema:postalCode [ a xsd:string ] .
+}
+WHERE {}
