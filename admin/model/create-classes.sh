@@ -35,7 +35,7 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --uri "${base}ns/domain#HouseItem" \
 --label "House item" \
 --slug house-item \
---sub-class-of "${base}ns/default#Item" \
+--sub-class-of "${base}ns/domain/default#Item" \
 --sub-class-of "${base}ns/domain#ItemOfHouseContainer"
 
 popd
