@@ -7,6 +7,6 @@ CONSTRUCT
     ?this schema:streetAddress [ a xsd:string ] ;
           schema:addressLocality [ a xsd:string ] ;
 	  schema:addressRegion [ a xsd:string ] ;
-	  shcema:postalCode [ a xsd:string ] .
+	  schema:postalCode [ a xsd:string ] .
 }
 WHERE {}

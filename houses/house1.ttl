@@ -7,9 +7,10 @@
 
 <addresses/address1/> a dom:AddressItem ;
     sioc:has_container <addresses/> ;
+    dct:title "101 Cottage Road, South Portland, ME" ;
     foaf:primaryTopic <houses/house1/#this> .
 
-<addresses/address1/#this> a schema:PostalAddress, dom:PostalAddress ;
+<addresses/address1/#this> a schema:PostalAddress, dom:Address ;
     foaf:isPrimaryTopicOf <houses/address1/> ;
     schema:streetAddress "101 Cottage Road" ;
     schema:addressLocality "South Portland" ;
