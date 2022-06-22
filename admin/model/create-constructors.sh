@@ -9,6 +9,8 @@ if [ "$#" -ne 3 ]; then
   exit 1
 fi
 
+echo "$@"
+
 base="$1"
 cert_pem_file=$(realpath -s "$2")
 cert_password="$3"
@@ -24,7 +26,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --uri "${base}ns/domain#ConstructHouse" \
 --label "Construct house" \
 --slug construct-house \
---query-file "$pwd/queries/construct-house.rq"
+--query-file "$pwd/queries/construct-house.rq" \
+"${base}admin/model/ontologies/"
 
 ./create-construct.sh \
 -b "${base}admin/" \
@@ -33,6 +36,7 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --uri "${base}ns/domain#ConstructAddress" \
 --label "Construct address" \
 --slug construct-address \
---query-file "$pwd/queries/construct-address.rq"
+--query-file "$pwd/queries/construct-address.rq" \
+"${base}admin/model/ontologies/"
 
 popd

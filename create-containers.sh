@@ -23,7 +23,7 @@ pushd . && cd "$SCRIPT_ROOT"
 --title "Houses" \
 --slug "houses" \
 --parent "$base" \
-"$base"
+--proxy "$base"
 
 ./create-container.sh \
 -b "$base" \
@@ -32,6 +32,6 @@ pushd . && cd "$SCRIPT_ROOT"
 --title "Addresses" \
 --slug "addresses" \
 --parent "$base" \
-"$base"
+--proxy "$base"
 
 popd

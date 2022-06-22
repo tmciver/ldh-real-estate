@@ -25,8 +25,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --constructor "${base}ns/domain#ConstructHouse" \
 --sub-class-of "${base}ns/domain#TopicOfHouseItem" \
 --sub-class-of "https://schema.org/House" \
---path "{isPrimaryTopicOf.slug}/" \
---fragment "this"
+--fragment "this" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-class.sh \
 -b "${base}admin/" \
@@ -36,7 +36,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "House item" \
 --slug house-item \
 --sub-class-of "${base}ns/domain/default#Item" \
---sub-class-of "${base}ns/domain#ItemOfHouseContainer"
+--sub-class-of "${base}ns/domain#ItemOfHouseContainer" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-class.sh \
 -b "${base}admin/" \
@@ -48,8 +49,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --constructor "${base}ns/domain#ConstructAddress" \
 --sub-class-of "${base}ns/domain#TopicOfAddressItem" \
 --sub-class-of "https://schema.org/Address" \
---path "{isPrimaryTopicOf.slug}/" \
---fragment "this"
+--fragment "this" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-class.sh \
 -b "${base}admin/" \
@@ -59,6 +60,7 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "Address item" \
 --slug address-item \
 --sub-class-of "${base}ns/domain/default#Item" \
---sub-class-of "${base}ns/domain#ItemOfAddressContainer"
+--sub-class-of "${base}ns/domain#ItemOfAddressContainer" \
+"${base}admin/model/ontologies/namespace/"
 
 popd

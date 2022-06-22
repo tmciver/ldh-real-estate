@@ -4,7 +4,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT
 {
-    ?this schema:streetAddress [ a xsd:string ] ;
+    $this schema:streetAddress [ a xsd:string ] ;
           schema:addressLocality [ a xsd:string ] ;
 	  schema:addressRegion [ a xsd:string ] ;
 	  schema:postalCode [ a xsd:string ] .

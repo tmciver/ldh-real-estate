@@ -4,7 +4,7 @@ PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 CONSTRUCT
 {
-    ?this dct:title [ a xsd:string ] ;
+    $this dct:title [ a xsd:string ] ;
           schema:text [ a xsd:string ] ;
           schema:address [ a schema:PostalAddress ] ;
           schema:image [ a schema:ImageObject ] .

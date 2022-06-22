@@ -23,7 +23,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "Topic of house item" \
 --slug topic-of-house-item \
 --on-property "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" \
---all-values-from "${base}ns/domain#HouseItem"
+--all-values-from "${base}ns/domain#HouseItem" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-restriction.sh \
 -b "${base}admin/" \
@@ -33,7 +34,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "Item of house container" \
 --slug item-of-house-container \
 --on-property "http://rdfs.org/sioc/ns#has_container" \
---has-value "${base}houses/"
+--has-value "${base}houses/" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-restriction.sh \
 -b "${base}admin/" \
@@ -43,7 +45,8 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "Topic of address item" \
 --slug topic-of-address-item \
 --on-property "http://xmlns.com/foaf/0.1/isPrimaryTopicOf" \
---all-values-from "${base}ns/domain#AddressItem"
+--all-values-from "${base}ns/domain#AddressItem" \
+"${base}admin/model/ontologies/namespace/"
 
 ./create-restriction.sh \
 -b "${base}admin/" \
@@ -53,6 +56,7 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 --label "Item of address container" \
 --slug item-of-address-container \
 --on-property "http://rdfs.org/sioc/ns#has_container" \
---has-value "${base}addresses/"
+--has-value "${base}addresses/" \
+"${base}admin/model/ontologies/namespace/"
 
 popd

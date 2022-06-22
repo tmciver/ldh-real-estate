@@ -54,5 +54,3 @@ codebase, then the command will look something like:
 Assuming it installed without error reload the LDH UI and you should now see
 "Houses" listed in the top left.  Clicking that link should bring you to a page
 where you'll be able to view some sample houses.
-
-Happy quoting!
