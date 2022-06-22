@@ -21,16 +21,4 @@ pushd . && cd "$SCRIPT_ROOT"/admin
 -b "$base" \
 --ontology "${base}ns#"
 
-./clear-ontology.sh \
--f "$cert_pem_file" \
--p "$cert_password" \
--b "$base" \
---ontology "${base}ns#"
-
-./clear-ontology.sh \
--f "$cert_pem_file" \
--p "$cert_password" \
--b "$base" \
---ontology "${base}ns#"
-
 popd

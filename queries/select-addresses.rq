@@ -1,0 +1,8 @@
+PREFIX schema: <https://schema.org/>
+
+SELECT DISTINCT ?address
+WHERE
+{
+    GRAPH ?g
+    { ?address a schema:PostalAddress }
+}

@@ -19,11 +19,10 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 -b "${base}admin/" \
 -f "$cert_pem_file" \
 -p "$cert_password" \
---uri "${base}ns/domain#House" \
+--uri "${base}ns#House" \
 --label "House" \
 --slug house \
---constructor "${base}ns/domain#ConstructHouse" \
---sub-class-of "${base}ns/domain#TopicOfHouseItem" \
+--constructor "${base}ns#ConstructHouse" \
 --sub-class-of "https://schema.org/House" \
 --fragment "this" \
 "${base}admin/model/ontologies/namespace/"
@@ -32,35 +31,12 @@ pushd . && cd "$SCRIPT_ROOT"/admin/model
 -b "${base}admin/" \
 -f "$cert_pem_file" \
 -p "$cert_password" \
---uri "${base}ns/domain#HouseItem" \
---label "House item" \
---slug house-item \
---sub-class-of "${base}ns/domain/default#Item" \
---sub-class-of "${base}ns/domain#ItemOfHouseContainer" \
-"${base}admin/model/ontologies/namespace/"
-
-./create-class.sh \
--b "${base}admin/" \
--f "$cert_pem_file" \
--p "$cert_password" \
---uri "${base}ns/domain#Address" \
+--uri "${base}ns#Address" \
 --label "Address" \
 --slug address \
---constructor "${base}ns/domain#ConstructAddress" \
---sub-class-of "${base}ns/domain#TopicOfAddressItem" \
+--constructor "${base}ns#ConstructAddress" \
 --sub-class-of "https://schema.org/Address" \
 --fragment "this" \
-"${base}admin/model/ontologies/namespace/"
-
-./create-class.sh \
--b "${base}admin/" \
--f "$cert_pem_file" \
--p "$cert_password" \
---uri "${base}ns/domain#AddressItem" \
---label "Address item" \
---slug address-item \
---sub-class-of "${base}ns/domain/default#Item" \
---sub-class-of "${base}ns/domain#ItemOfAddressContainer" \
 "${base}admin/model/ontologies/namespace/"
 
 popd
