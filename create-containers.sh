@@ -25,13 +25,50 @@ pushd . && cd "$SCRIPT_ROOT"
 --parent "$base" \
 --proxy "$base"
 
-./create-container.sh \
--b "$base" \
--f "$cert_pem_file" \
--p "$cert_password" \
---title "Addresses" \
---slug "addresses" \
---parent "$base" \
---proxy "$base"
+
+
+select_addresses_doc=$(./create-select.sh \
+  -b "$base" \
+  -f "$cert_pem_file" \
+  -p "$cert_password" \
+  --proxy "$proxy" \
+  --title "Select addresses" \
+  --slug select-addresses \
+  --query-file "$pwd/queries/select-addresses.rq"
+)
+
+select_addresses_ntriples=$(./get-document.sh \
+  -f "$cert_pem_file" \
+  -p "$cert_password" \
+  --proxy "$proxy" \
+  --accept 'application/n-triples' \
+  "$select_addresses_doc"
+)
+
+select_addresses=$(echo "$select_addresses_ntriples" | sed -rn "s/<${select_addresses_doc//\//\\/}> <http:\/\/xmlns.com\/foaf\/0.1\/primaryTopic> <(.*)> \./\1/p" | head -1)
+
+address_container=$(./create-container.sh \
+  -b "$base" \
+  -f "$cert_pem_file" \
+  -p "$cert_password" \
+  --proxy "$proxy" \
+  --title "Addresses" \
+  --slug "addresses" \
+  --parent "$base"
+)
+
+./remove-content.sh \
+  -f "$cert_pem_file" \
+  -p "$cert_password" \
+  --proxy "$proxy" \
+  "$address_container"
+
+./append-content.sh \
+  -f "$cert_pem_file" \
+  -p "$cert_password" \
+  --proxy "$proxy" \
+  --value "$select_addresses" \
+  --mode "https://w3id.org/atomgraph/client#GridMode" \
+  "$address_container"
 
 popd
