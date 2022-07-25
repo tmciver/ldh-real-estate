@@ -36,7 +36,7 @@ and you'll have the above system dependencies satisfied.
 To install "LDH Houses", first clone this repository and `cd` into the project
 directory.  Then, run the following command:
 
-    $ export SCRIPT_ROOT=<path-to-ldh-scripts-dir> \
+    $ export SCRIPT_ROOT=<path-to-ldh-scripts-dir>; \
 	  ./install.sh \
 	  <url-of-running-ldh> \
 	  <path-to-tls-private-key> \
@@ -45,10 +45,10 @@ directory.  Then, run the following command:
 If you're running a local LDH and you set `LDH_ROOT` to the path to the LDH
 codebase, then the command will look something like:
 
-    $ export SCRIPT_ROOT=$LDH_ROOT/scripts \
+    $ export SCRIPT_ROOT=$LDH_ROOT/scripts; \
 	  ./install.sh \
-	  https://localhost:4443 \
-	  $LDH_ROOT/certs/owner.p12.pem \
+	  https://localhost:4443/ \
+	  $LDH_ROOT/ssl/owner/cert.pem \
 	  <password-for-tls-private-key>
 
 Assuming it installed without error reload the LDH UI and you should now see
